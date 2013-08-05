@@ -22,6 +22,7 @@ def is_valid_state(board, n=None):
     solution. Only checks the first 'n' columns"""
     if n is None:
         n = len(board)
+
     # Check if any of the first 'n' queens are able to attack each other
     for first_queen in range(n):
         for other_queen in range(first_queen+1, n):
@@ -53,6 +54,7 @@ def solve_with_backtracking(board, n=0, solns=None):
     """Find every possible solution to the nqueens problem"""
     if solns is None:
         solns = []
+
     if n < len(board):
         for i in xrange(len(board)):
             board[n] = i
